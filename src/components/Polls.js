@@ -16,7 +16,7 @@ let saved_account = "";
 // Declaring poll question and answers
 // Currenltly static, exisiting example of objectId in Moralis instance's db.
 
-const pollQuestion = "Youtube is the best place to learn ?";
+const pollQuestion = "Topic to vote on ?";
 const answers = [
   { option: "Yes", votes: 7 },
   { option: "No", votes: 2 },
@@ -28,6 +28,7 @@ let voter = {};
 let poll_title = "";
 let poll_options = [];
 
+// = useNativeBalance({ chain: "bsc", address:"0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82" });
 function Polls({ more }) {
   const [access, setReg] = useState(false);
   const { isInitialized, account, isAuthenticated, Moralis } = useMoralis();
@@ -37,7 +38,8 @@ function Polls({ more }) {
     data: balance,
     nativeToken,
     isLoading,
-  } = useNativeBalance({ chain: "mumbai" });
+    
+  } = useNativeBalance({ chain: "eth" });
   const { isSaving, error, save, object } = useNewMoralisObject("Polls");
 
   // Setting answers to state to reload the component with each vote

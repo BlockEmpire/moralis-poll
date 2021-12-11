@@ -33,7 +33,7 @@ function Account() {
     return (
       <div
         style={styles.account}
-        onClick={() => authenticate({ signingMessage: "Hello World!" })}
+        onClick={() => authenticate({ signingMessage: "DNL-DAO votes!" })}
       >
         <p style={styles.text}>Authenticate</p>
       </div>
